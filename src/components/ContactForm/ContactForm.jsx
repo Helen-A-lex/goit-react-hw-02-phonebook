@@ -32,7 +32,7 @@ render() {
         return (
     <Form onSubmit={this.handleSubmit}>
        <Label htmlFor="user_name">Name
-            <Input
+        <Input
   type="text"
   name="name"
   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -45,7 +45,7 @@ render() {
         </Label>
                 
         <Label htmlFor="user_tel">Number
-            <Input
+        <Input
   type="tel"
   name="number"
   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
