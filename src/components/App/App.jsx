@@ -1,8 +1,11 @@
 import { Component } from "react";
 import { nanoid } from 'nanoid'
-import { ContactForm } from "./ContactForm/ContactForm";
-import { ContactList } from "./ContactList/ContactList";
-import { Filter } from "./Filter/Filter";
+import { GlobalStyle } from "../GlobalStyle";
+import { Title } from "./App.styled";
+import { ContactForm } from "../ContactForm/ContactForm";
+import { ContactList } from "../ContactList/ContactList";
+import { Filter } from "../Filter/Filter";
+import { Layout } from "../Layout";
 export class App extends Component {
   state = {
     contacts: [],
@@ -58,14 +61,15 @@ export class App extends Component {
     const visibleContacts = this.getFilteredContacts();
     console.log(visibleContacts);
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <Layout>
+         <GlobalStyle/>
+        <Title>Phonebook</Title>
         <ContactForm onSubmit={this.formSubmitHandle} />
-        <h2>Contacts</h2>
+        <Title>Contacts</Title>
         <Filter value={filter} onChange={this.changeFilter} />
         <ContactList filteredContacts={visibleContacts} onDelete={this.deleteContact} />
 
-      </div>
+      </Layout>
       
     )
   
